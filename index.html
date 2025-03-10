@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Merger</h1>
+            <p class="subtitle">Merge multiple PDF files into one document</p>
+            <p class="free-notice">No login is required to download the file. This tool is entirely free!</p>
+        </header>
+
+        <main>
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="12" y1="18" x2="12" y2="12"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                    <p>Drop PDF files here or click to upload</p>
+                    <input type="file" id="file-input" multiple accept="application/pdf">
+                </div>
+            </div>
+
+            <div id="file-list-container" class="file-list-container hidden">
+                <h2>Files to merge</h2>
+                <p class="instruction">Drag to reorder files</p>
+                <ul id="file-list" class="file-list"></ul>
+                <div class="actions">
+                    <button id="merge-btn" class="btn primary">Merge PDFs</button>
+                    <button id="clear-btn" class="btn secondary">Clear All</button>
+                </div>
+            </div>
+
+            <div id="progress-container" class="progress-container hidden">
+                <h2>Merging files...</h2>
+                <div class="progress">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="privacy-notice">Privacy Notice: All files are processed in your browser. No data is stored on our servers after download.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
